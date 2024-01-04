@@ -1,6 +1,6 @@
 import numpy as np
 import math 
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from viam.proto.common import Geometry, RectangularPrism, Pose, Vector3
 from .graham_scan import GrahamScan
 
@@ -92,14 +92,14 @@ class BoundingBox2D:
                                                                    z = prism_z_dim_mm)))
         
         
-    def plot(self):
-        x = [edge[0] for edge in self.corners]
-        y = [edge[1] for edge in self.corners]
+    # def plot(self):
+    #     x = [edge[0] for edge in self.corners]
+    #     y = [edge[1] for edge in self.corners]
 
-        x.append(x[0])
-        y.append(y[0])
+    #     x.append(x[0])
+    #     y.append(y[0])
 
-        plt.plot(x, y, linewidth=.5 )
+    #     plt.plot(x, y, linewidth=.5 )
 
 
 def get_minimum_bounding_box(g: GrahamScan)->BoundingBox2D:

@@ -1,13 +1,12 @@
 from sklearn.cluster import DBSCAN
 import numpy as np
-from .utils import set_pyplot_style, plot_geometry
+# from .utils import set_pyplot_style, plot_geometry
 from .ransac import RansacRegressor
-from .dbscan import plot_dbscan_clusters
+# from .dbscan import plot_dbscan_clusters
 from .graham_scan import GrahamScan
 from .rotating_caliper import get_minimum_bounding_box
 from .pointcloud.point_cloud import PlanarPointCloud
 from viam.logging import getLogger
-import matplotlib.pyplot as plt
 
 LOGGER = getLogger(__name__)
 TO_MM = 1000
@@ -86,12 +85,12 @@ class Detector():
                                                  prism_z_dim_mm=self.prism_z_dim)
                     res.append((cluster, geo))
         
-        if self.save_results:
-            set_pyplot_style()
-            plot_dbscan_clusters(self.dbscan, input.points_norm)
-            for _, geo in res:
-                plot_geometry(geo)
-            plt.savefig("./results.png", format='png', dpi=300)       
+        # if self.save_results:
+        #     set_pyplot_style()
+        #     plot_dbscan_clusters(self.dbscan, input.points_norm)
+        #     for _, geo in res:
+        #         plot_geometry(geo)
+        #     plt.savefig("./results.png", format='png', dpi=300)       
         
         return res
             

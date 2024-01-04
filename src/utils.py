@@ -2,26 +2,25 @@
 from typing import List
 from .rotating_caliper import BoundingBox2D
 import numpy as np
-import matplotlib.pyplot as plt
 import math
 from viam.proto.common import GeometriesInFrame, Geometry, PointCloudObject
 
 
-def plot_point_cloud(X, Y):
-    # Create a scatter plot of the points
-    plt.scatter(X, Y, s=10, c='b', marker='o', label='Point Cloud')
+# def plot_point_cloud(X, Y):
+#     # Create a scatter plot of the points
+#     plt.scatter(X, Y, s=10, c='b', marker='o', label='Point Cloud')
 
-    # Add labels and title
-    plt.xlabel('X-axis')
-    plt.ylabel('Y-axis')
-    plt.title('Point Cloud Plot')
+#     # Add labels and title
+#     plt.xlabel('X-axis')
+#     plt.ylabel('Y-axis')
+#     plt.title('Point Cloud Plot')
 
-    # Add a legend
-    plt.legend()
+#     # Add a legend
+#     plt.legend()
 
-    # Show the plot
-    plt.grid(True)
-    plt.show()
+#     # Show the plot
+#     plt.grid(True)
+#     plt.show()
 
 def create_projection_from_list(points: np.ndarray):
     number_of_points = points.shape[0]
@@ -43,20 +42,20 @@ def normalize_pcd(X,Y):
         
     
     
-def plot_inliers_and_outliers(X, Y, inlier_mask=None):
-    X =X.flatten()
-    outlier_mask = np.logical_not(inlier_mask)
-    plt.scatter(
-    X[inlier_mask], Y[inlier_mask], color="yellowgreen", marker=".", label="Inliers"
-    )
-    plt.scatter(
-        X[outlier_mask], Y[outlier_mask], color="gold", marker=".", label="Outliers"
-    )
-    plt.legend()
+# def plot_inliers_and_outliers(X, Y, inlier_mask=None):
+#     X =X.flatten()
+#     outlier_mask = np.logical_not(inlier_mask)
+#     plt.scatter(
+#     X[inlier_mask], Y[inlier_mask], color="yellowgreen", marker=".", label="Inliers"
+#     )
+#     plt.scatter(
+#         X[outlier_mask], Y[outlier_mask], color="gold", marker=".", label="Outliers"
+#     )
+#     plt.legend()
 
-    # Show the plot
-    plt.grid(True)
-    plt.show() 
+#     # Show the plot
+#     plt.grid(True)
+#     plt.show() 
     
     
 def rotate_rectangle(vertices, angle_radians):
@@ -100,15 +99,15 @@ def geometries_to_pointcloud_objects(geometries: List[Geometry], ref_frame:str) 
     return res
 
 
-def set_pyplot_style():
-    plt.style.use("dark_background")
-    plt.grid(True, color='gainsboro', linestyle='-', linewidth=.1)
-    # 
-    plt.xlim(-0.5, 0.6)
-    plt.ylim((-.5, 0.6))
-    plt.axis("square")
-    # plt.axis('equal')
-    plt.xticks(fontsize=4)
-    plt.yticks(fontsize=4)
+# def set_pyplot_style():
+#     plt.style.use("dark_background")
+#     plt.grid(True, color='gainsboro', linestyle='-', linewidth=.1)
+#     # 
+#     plt.xlim(-0.5, 0.6)
+#     plt.ylim((-.5, 0.6))
+#     plt.axis("square")
+#     # plt.axis('equal')
+#     plt.xticks(fontsize=4)
+#     plt.yticks(fontsize=4)
     
     

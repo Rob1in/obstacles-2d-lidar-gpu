@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 class PlanarPointCloud():
     '''
@@ -65,25 +64,6 @@ class PlanarPointCloud():
                 res.scale = self.scale
                 res.points_norm = self.points_norm[mask]
         return res
-    
-    def plot(self, normalized = False):
-        if normalized:
-            plt.scatter(self.X_norm, self.Y_norm, s=10, c='b', marker='o', label='Normalized Point Cloud')
-            
-        else:
-            plt.scatter(self.X, self.Y, s=10, c='b', marker='o', label='Point Cloud')
-
-        # Add labels and title
-        plt.xlabel('X-axis')
-        plt.ylabel('Y-axis')
-        plt.title('Point Cloud Plot')
-
-        # Add a legend
-        plt.legend()
-
-        # Show the plot
-        plt.grid(True)
-        plt.show()
 
 
 class PointCloud():
